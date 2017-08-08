@@ -1,6 +1,7 @@
 en:
   users:
     new:
+      login: "Allready have an account !"
       signup: "Sign Up"
       create: "Create user"
       confirmation: "Confirmation"
@@ -38,6 +39,7 @@ en:
       login: "Log In"
       signup: "Sign up now!"
       new_user: "New user?"
+      remember: "Remember me on this computer"
     create:
       failed: "Failed to login"
   staticpages:
@@ -68,6 +70,8 @@ en:
       h1: "User#new"
       p: "Find me in app/views/users/new.html.erb"
       signup: "Sing Up"
+      create: "Create my account"
+      login: "Allready have an account !"
   controllers:
     users_controller:
       welcome: "Wellcome to the sample app"
