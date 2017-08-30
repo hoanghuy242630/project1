@@ -6,11 +6,16 @@ class Post < ApplicationRecord
   validates :content, :title, presence: true, length: {maximum: Settings.post.maximum_length}
   validate  :picture_size
 
-  scope :feed, -> (user_id){where user_id: user_id}
+  scope :feed, (lambda do |user_id|
+    following_ids = "SELECT followed_id FROM relationships
+      WHERE  follower_id = :user_id"
+    where("user_id IN (#{following_ids})
+      OR user_id = :user_id", user_id: user_id)
+  end)
 
   private
     def picture_size
-      if picture.size > Settings.post.byte.megabytes
+      if picture.size > 5.megabytes
         errors.add(:picture, "should be less than 5MB")
       end
     end
