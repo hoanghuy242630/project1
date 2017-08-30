@@ -1,4 +1,7 @@
 en:
+  posts:
+    create:
+      post_created: "Post created"
   users:
     new:
       login: "Allready have an account !"
@@ -9,9 +12,16 @@ en:
       enter_email: "Enter email"
       enter_pass: "Enter password"
   shared:
+    post_form:
+      post: "Post"
+      create_new_post: "Create new post ..."
+    user_info:
+      post: "Post"
     error_messages:
       error: "error"
       contain: "The form contains"
+      user_info:
+        post: "Posts"
   layouts:
     application:
       title: "SampleApp"

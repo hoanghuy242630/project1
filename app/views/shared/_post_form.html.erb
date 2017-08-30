@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <h3><%= t ".title" %></h3>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_area :content, placeholder: t(".create_new_post") %>
+  </div>
+  <%= f.submit t(".post"), class: "btn btn-primary" %>
+  <span class="picture">
+    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+<% end %>
