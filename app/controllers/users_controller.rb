@@ -21,7 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by id: params[:id]
-
+    @posts = @user.posts.paginate page: params[:page],
+      per_page: Settings.users.per_page
     return if @user
     flash[:danger] = t ".not_found"
     redirect_to root_url
@@ -46,14 +47,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation
-  end
-
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t ".pls_login"
-      redirect_to login_url
-    end
   end
 
   def correct_user
