@@ -61,6 +61,12 @@ en:
     about:
       title: "About"
   users:
+    update:
+      profile_updated: "Profile updated"
+    edit:
+      save_changes: "Save change"
+      edit_user: "Edit user"
+      pls_login: "please login"
     create:
       welcome: "Wellcome to the sample app"
       failed: "failed to signup"
