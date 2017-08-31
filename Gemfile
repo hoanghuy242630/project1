@@ -14,7 +14,6 @@ gem "jquery-rails", "4.3.1"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.2"
 gem "sass-rails", "~> 5.0"
-gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "faker", "1.7.3"
@@ -31,6 +30,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.5"
   gem "selenium-webdriver"
   gem "rails-controller-testing"
+  gem "sqlite3"
 end
 
 group :development do

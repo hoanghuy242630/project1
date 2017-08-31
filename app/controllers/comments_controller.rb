@@ -10,10 +10,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
 
-    respond_to do |format|
-      format.html { redirect_to request.referrer }
-      format.js
-    end
+    redirect_to request.referrer
 
     if @comment.save
 
@@ -27,10 +24,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find_by id: params[:id]
     @comment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to request.referrer }
-      format.js
-    end
+    redirect_to request.referrer
   end
 
   private

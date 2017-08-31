@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    # byebug
     @post = current_user.posts.build post_params
     if @post.save
       flash[:success] = t ".post_created"
