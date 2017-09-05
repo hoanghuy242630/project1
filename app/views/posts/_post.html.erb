@@ -12,4 +12,17 @@
       <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <div style="margin-left: 40px;">
+    <section class="post_form">
+      <%= render post.comments %>
+    </section>
+    <%= link_to gravatar_for(current_user, size: 20), current_user %>
+    <span style="font-size: 12px;"><%= link_to current_user.name, post.user %></span>
+    <%= form_for [post, post.comments.build] do |f| %>
+    <span>
+      <%= f.text_field :content, class: "form-control" %>
+      <%= f.submit "comment", class: "btn btn-primary" %>
+    </span>
+    <%end%>
+  </div>
 </li>
